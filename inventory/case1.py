@@ -8,9 +8,9 @@ driver.start_page("inventory/create", "Box")
 
 driver.select_item_search("Mouth Swabs")
 driver.enter_field("count", "5")
-driver.enter_field("expiration", "12012020")
+driver.enter_field("expiration", "122020")
 driver.click_button("add_item")
-driver.assert_inventory_table("Personal Care", "Oral Care" ,"Mouth Swabs", "12/01/2020", "5", 1)
+driver.assert_inventory_table("Personal Care", "Oral Care" ,"Mouth Swabs", "12/2020", "5", 1)
 
 driver.select_item_column("Mother and Child", "Pediatric Supplies" ,"Breathing Circuits")
 driver.enter_field("count", "10")

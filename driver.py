@@ -80,7 +80,15 @@ def select_item_search(item):
 
 def enter_field(fieldID, content):
 	elem = driver.find_element_by_id(fieldID)
-	elem.send_keys(content)
+	if(fieldID != "expiration"):
+		elem.send_keys(content)
+	elif(fieldID == "expiration"):
+		month = content[0:2]
+		year = content[2:6]
+		
+		elem.send_keys(month)
+		elem.send_keys(Keys.TAB)
+		elem.send_keys(year)
 
 def click_button(buttonID):
 	time.sleep(0.5)

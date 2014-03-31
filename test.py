@@ -15,8 +15,9 @@ testList.append("./inventory/case3.py")
 testList.append("./inventory/case4.py")
 '''
 testList.append("./catalog/case1.py")
-testList.append("./catalog/case2.py")
 '''
+testList.append("./catalog/case2.py")
+
 testList.append("./orders/case1.py")
 testList.append("./orders/case2.py")
 '''

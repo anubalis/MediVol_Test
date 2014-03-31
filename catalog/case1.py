@@ -28,9 +28,9 @@ driver.start_page("inventory/create", "Box")
 
 driver.select_item_search("Test Plastic")
 driver.enter_field("count", "5")
-driver.enter_field("expiration", "12012020")
+driver.enter_field("expiration", "122020")
 driver.click_button("add_item")
-driver.assert_inventory_table("Plastic", "Other Plastics" ,"Test Plastic", "12/01/2020", "5", 1)
+driver.assert_inventory_table("Plastic", "Other Plastics" ,"Test Plastic", "12/2020", "5", 1)
 
 driver.select_item_column("Plastic", "Other Plastics" ,"Automated Plastic")
 driver.enter_field("count", "10")
