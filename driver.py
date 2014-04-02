@@ -33,6 +33,10 @@ def select_item_column(categories, boxname, item):
 	
 	elem = driver.find_element_by_id("categories")
 	send_keys(categories, elem)
+	time.sleep(0.2)
+	elem.send_keys(Keys.ARROW_UP)
+	time.sleep(0.2)
+	elem.send_keys(Keys.ARROW_DOWN)
 	time.sleep(1)
 	
 	'''
@@ -62,7 +66,7 @@ def select_item_column(categories, boxname, item):
 def select_item_search(item):
 	
 	elem = driver.find_element_by_id("itemSearch")
-	elem.send_keys(item)
+	send_keys(item, elem)
 	time.sleep(1.5)
 	elem.send_keys(Keys.ARROW_DOWN)
 	time.sleep(0.1)
@@ -189,7 +193,7 @@ def send_keys(text, elem):
 	keysList = list(text)
 	for key in keysList:
 		elem.send_keys(key)
-		time.sleep(0.2)
+		time.sleep(0.1)
 		
 def login(role):
 	user = ""

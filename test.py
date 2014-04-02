@@ -1,23 +1,22 @@
 import datetime, time
 
 #Run all the test cases, comment out test that is not run
-RunGeneralCases = False
-#RunGeneralCases = True
+#RunGeneralCases = False
+RunGeneralCases = True
 
 
 testList = []
 passed = 0
 failed = 0
-'''
+
 testList.append("./inventory/case1.py")
 testList.append("./inventory/case2.py")
 testList.append("./inventory/case3.py")
 testList.append("./inventory/case4.py")
-'''
-testList.append("./catalog/case1.py")
-'''
-testList.append("./catalog/case2.py")
 
+testList.append("./catalog/case1.py")
+testList.append("./catalog/case2.py")
+'''
 testList.append("./orders/case1.py")
 testList.append("./orders/case2.py")
 '''
