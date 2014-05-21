@@ -4,7 +4,10 @@ import driver
 Case 4: Creating a box without entering the required field would fail
 '''
 
-driver.start_page("inventory/create", "Box")
+driver.start_page("administration", "Log In")
+driver.login("admin")
+driver.click_navibar("inventoryNavButton")
+driver.click_button("createNewBox")
 
 #No count, No expire
 driver.select_item_column("Personal Care", "Oral Care" ,"Catheters")

@@ -9,17 +9,16 @@ testList = []
 passed = 0
 failed = 0
 
+
+testList.append("./catalog/case1.py")
+testList.append("./catalog/case2.py")
+
 testList.append("./inventory/case1.py")
 testList.append("./inventory/case2.py")
 testList.append("./inventory/case3.py")
 testList.append("./inventory/case4.py")
 
-testList.append("./catalog/case1.py")
-testList.append("./catalog/case2.py")
-'''
 testList.append("./orders/case1.py")
-testList.append("./orders/case2.py")
-'''
 
 #testList.append("./administration/case1.py")
 
@@ -37,6 +36,7 @@ automationStart = datetime.datetime.now().replace(microsecond=0)
 if(RunGeneralCases == True):
 	print timestamp() + "Running general tests"
 	caseStart = datetime.datetime.now().replace(microsecond=0)
+	exec(open("./general/case3.py").read())
 	exec(open("./general/case1.py").read())
 	exec(open("./general/case2.py").read())
 	#exec(open("./general/test.py").read())

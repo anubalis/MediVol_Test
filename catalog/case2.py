@@ -4,7 +4,10 @@ import driver
 Case 2: Create new item with duplicate name
 '''
 
-driver.start_page("catalog", "log")
+driver.start_page("administration", "Log In")
+driver.login("admin")
+driver.click_navibar("catalogNavButton")
+
 driver.assert_element("boxNameField","choose a box name above")
 driver.select_item_column("Plastic", "Other Plastics" ,"Funnel")
 driver.assert_element("boxNameField","Other Plastics")
@@ -23,7 +26,9 @@ driver.assert_element("changeMessage","Item \"Test Plastic\" already exists")
 
 driver.quit_driver()
 
-driver.start_page("catalog", "log")
+driver.start_page("administration", "Log In")
+driver.login("admin")
+driver.click_navibar("catalogNavButton")
 
 driver.select_item_search("Test Plastic")
 
@@ -39,7 +44,7 @@ driver.click_button("editItem")
 
 driver.click_button("deleteItem")
 
-driver.warning_dialog("Are you sure you want to delete this item from the catalog?")
+driver.warning_dialog("Are you sure you want to delete this item from the catalog?", "remove_item")
 
 driver.dialog_yes()
 

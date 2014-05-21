@@ -4,7 +4,10 @@ import driver
 Case 3: Add 4 items with all permutation of count and expiration
 '''
 
-driver.start_page("inventory/create", "Box")
+driver.start_page("administration", "Log In")
+driver.login("admin")
+driver.click_navibar("inventoryNavButton")
+driver.click_button("createNewBox")
 
 #No count, No expire
 driver.select_item_column("Personal Care", "Oral Care" ,"Catheters")

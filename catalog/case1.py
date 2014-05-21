@@ -4,7 +4,10 @@ import driver
 Case 1: Create new item in catalog
 '''
 
-driver.start_page("catalog", "log")
+driver.start_page("administration", "Log In")
+driver.login("admin")
+driver.click_navibar("catalogNavButton")
+
 driver.assert_element("boxNameField","choose a box name above")
 driver.select_item_column("Plastic", "Other Plastics" ,"Funnel")
 driver.assert_element("boxNameField","Other Plastics")
@@ -24,7 +27,10 @@ driver.assert_element("changeMessage","Automated Plastic has been added.")
 driver.quit_driver()
 
 
-driver.start_page("inventory/create", "Box")
+driver.start_page("administration", "Log In")
+driver.login("admin")
+driver.click_navibar("inventoryNavButton")
+driver.click_button("createNewBox")
 
 driver.select_item_search("Test Plastic")
 driver.enter_field("count", "5")
@@ -42,7 +48,10 @@ driver.click_button("next")
 driver.quit_driver()
 
 
-driver.start_page("catalog", "log")
+driver.start_page("administration", "Log In")
+driver.login("admin")
+driver.click_navibar("catalogNavButton")
+
 driver.select_item_column("Plastic", "Other Plastics" ,"Test Plastic")
 
 
@@ -58,7 +67,7 @@ driver.click_button("editItem")
 
 driver.click_button("deleteItem")
 
-driver.warning_dialog("Are you sure you want to delete this item from the catalog?")
+driver.warning_dialog("Are you sure you want to delete this item from the catalog?", "remove_item")
 
 driver.dialog_yes()
 
@@ -80,7 +89,7 @@ driver.click_button("editItem")
 
 driver.click_button("deleteItem")
 
-driver.warning_dialog("Are you sure you want to delete this item from the catalog?")
+driver.warning_dialog("Are you sure you want to delete this item from the catalog?", "remove_item")
 
 driver.dialog_yes()
 
